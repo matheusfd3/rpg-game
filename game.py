@@ -38,7 +38,23 @@ class Enemy(Character):
   def show_info(self):
     return f"{super().show_info()}\nKind: {self.get_kind()}\n"
   
-hero = Hero(name="Herói", health=100, level=5, skill="Super Força")
-print(hero.show_info())
-enemy = Enemy(name="Morcego", health=50, level=3, kind="Voador")
-print(enemy.show_info())
+class Game:
+  """ Classe orquestradora do jogo """
+
+  def __init__(self) -> None:
+    self.hero = Hero(name="Herói", health=100, level=5, skill="Super Força")
+    self.enemy = Enemy(name="Morcego", health=50, level=3, kind="Voador")
+  
+  def start_battle(self):
+    """ Fazer a gestão da batalha em turnos """
+    print("Iniciando batalha!")
+    while self.hero.get_health() > 0 and self.enemy.get_health() > 0:
+      print("\nDetalhes dos Personagens:")
+      print(self.hero.show_info())
+      print(self.enemy.show_info())
+
+      input("Pressione Enter para atacar...")
+      choice = input("Escolha (1 - Ataque Normal, 2 - Ataque Especial): ")
+
+game = Game()
+game.start_battle()
