@@ -10,5 +10,5 @@
   Jogo de combate em turnos aplicando fundamentos como herança, polimorfismo, encapsulamento e decoradores.
 </p>
 
-## Screenshot
+### Screenshot
 ![App Screenshot](https://github.com/matheusfd3/rpg-game/blob/main/.github/screenshot.png)
